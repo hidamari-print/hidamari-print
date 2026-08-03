@@ -189,12 +189,16 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
   .psheet{
     max-width:100%!important;
     width:100%!important;
-    height:100vh!important;
+    height:297mm!important;
+    max-height:297mm!important;
     border-radius:0!important;
     box-shadow:none!important;
     border:none!important;
     display:flex!important;
     flex-direction:column!important;
+    page-break-inside:avoid!important;
+    break-inside:avoid!important;
+    overflow:hidden!important;
   }
   .shd{
     padding:6px 8px!important;
@@ -864,10 +868,10 @@ function doPrint(){
   const title=document.getElementById('sheet-title').textContent;
   const count=LV_CONFIG[curLv].count;
   const cols=LV_CONFIG[curLv].cols;
-  // 問題数に応じてフォントサイズ・行の高さを調整
+  // 問題数に応じてフォントサイズ・行の高さを調整（mm指定でA4に確実に収める）
   const baseFontSize = count<=5 ? '2.8rem' : count<=7 ? '2.2rem' : '1.6rem';
   const numFontSize  = count<=5 ? '1.5rem' : count<=7 ? '1.3rem' : '1.0rem';
-  const rowHeight    = count<=5 ? '16vh'   : count<=7 ? '11vh'   : '8vh';
+  const rowHeight    = count<=5 ? '50mm'   : count<=7 ? '34mm'   : '24mm';
   // tableで問題を組み立て
   const rows=[];
   if(cols===1){
