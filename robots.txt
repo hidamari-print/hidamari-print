@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hidamari-print.github.io/hidamari-print/sitemap.xml
