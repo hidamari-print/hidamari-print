@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>お問い合わせ｜ひだまりプリント</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f5f0e6;
+  --green:#7aab5a;
+  --green-d:#5a8a40;
+  --green-l:#e8f2e0;
+  --green-m:#c8e0b4;
+  --text:#3a3020;
+  --text-m:#6a5a40;
+  --text-l:#9a8a70;
+  --border:rgba(80,60,20,0.12);
+  --white:#fff;
+  --font:'Zen Maru Gothic',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--cream);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.8;
+}
+.site-header{
+  background:var(--white);
+  border-bottom:1.5px solid var(--green-m);
+  padding:0 20px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 1px 8px rgba(80,120,40,0.07);
+}
+.logo{
+  display:flex;align-items:center;gap:10px;text-decoration:none;
+}
+.logo-ic{
+  width:36px;height:36px;background:var(--green);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+}
+.logo-name{font-size:1rem;font-weight:700;color:var(--green-d);}
+.container{max-width:720px;margin:0 auto;padding:40px 20px 60px;}
+.page-title{
+  font-size:clamp(1.4rem,3.5vw,1.8rem);font-weight:700;color:var(--text);
+  text-align:center;margin-bottom:8px;
+}
+.page-title-sub{font-size:.8rem;color:var(--text-l);text-align:center;margin-bottom:32px;}
+.intro{
+  background:var(--white);border-radius:12px;padding:20px 24px;
+  font-size:.88rem;color:var(--text-m);margin-bottom:28px;
+  border:1.5px solid var(--border);line-height:1.85;
+}
+/* フォームカード */
+.form-card{
+  background:var(--white);border-radius:12px;padding:28px 24px;
+  border:1.5px solid var(--border);margin-bottom:16px;
+}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+.field:last-child{margin-bottom:0;}
+label{font-size:.82rem;font-weight:700;color:var(--text-m);}
+.req{
+  display:inline-block;background:var(--green);color:#fff;
+  font-size:.65rem;padding:2px 7px;border-radius:8px;margin-left:6px;vertical-align:middle;
+}
+.opt{
+  display:inline-block;background:#e0d4c0;color:var(--text-m);
+  font-size:.65rem;padding:2px 7px;border-radius:8px;margin-left:6px;vertical-align:middle;
+}
+.field-note{font-size:.72rem;color:var(--text-l);margin-top:2px;}
+select,input[type="text"],input[type="email"],textarea{
+  width:100%;
+  border:1.5px solid var(--border);
+  border-radius:8px;
+  padding:10px 12px;
+  font-family:var(--font);
+  font-size:.88rem;
+  color:var(--text);
+  background:var(--cream);
+  outline:none;
+  transition:border-color .15s;
+  appearance:none;
+  -webkit-appearance:none;
+}
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237aab5a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 12px center;
+  padding-right:32px;
+}
+select:focus,input:focus,textarea:focus{border-color:var(--green);background:var(--white);}
+textarea{resize:vertical;min-height:130px;line-height:1.75;}
+/* honeypot非表示 */
+.hp-field{display:none;}
+/* 注意書きカード */
+.notice-card{
+  background:#fdf9f2;border-radius:12px;padding:18px 22px;
+  border:1.5px solid var(--border);margin-bottom:20px;
+  font-size:.78rem;color:var(--text-m);line-height:1.85;
+}
+.notice-card ul{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.notice-card ul li::before{content:'・';color:var(--green-d);}
+.notice-card a{color:var(--green-d);text-underline-offset:2px;}
+/* 送信ボタン */
+.submit-btn{
+  width:100%;padding:14px;
+  background:var(--green);border:none;border-radius:10px;
+  color:#fff;font-family:var(--font);font-size:.95rem;font-weight:700;
+  cursor:pointer;transition:background .18s,transform .18s;
+  margin-top:8px;
+}
+.submit-btn:hover{background:var(--green-d);transform:translateY(-1px);}
+.back-wrap{text-align:center;margin-top:32px;}
+.back-btn{
+  display:inline-block;background:var(--green);color:#fff;text-decoration:none;
+  padding:13px 36px;border-radius:10px;font-family:var(--font);
+  font-size:.92rem;font-weight:700;transition:background .18s,transform .18s;
+}
+.back-btn:hover{background:var(--green-d);transform:translateY(-1px);}
+.site-footer{
+  background:var(--green-d);color:rgba(255,255,255,.85);text-align:center;
+  padding:24px 20px;font-size:.75rem;line-height:1.8;
+}
+.site-footer strong{color:#fff;}
+@media(max-width:480px){
+  .container{padding:28px 14px 48px;}
+  .form-card,.intro,.notice-card{padding:18px 16px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <div class="logo-ic">🌸</div>
+    <span class="logo-name">ひだまりプリント</span>
+  </a>
+</header>
+
+<main class="container">
+
+  <h1 class="page-title">お問い合わせ</h1>
+  <p class="page-title-sub">ひだまりプリント</p>
+
+  <div class="intro">
+    ひだまりプリントをご利用いただき、ありがとうございます。<br>
+    サイトについてのご質問、不具合のご報告、ご意見・ご要望などがありましたら、こちらからお知らせください。<br>
+    「こんなプリントがあったらいいな」といったご希望もお待ちしています。
+  </div>
+
+  <form
+    name="contact"
+    method="POST"
+    action="thanks.html"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <!-- Netlify Forms用 hidden input -->
+    <input type="hidden" name="form-name" value="contact">
+
+    <div class="form-card">
+
+      <!-- honeypot：botのみ入力・通常ユーザーには非表示 -->
+      <div class="hp-field">
+        <label>このフィールドは入力しないでください <input name="bot-field"></label>
+      </div>
+
+      <div class="field">
+        <label for="type">お問い合わせの種類<span class="req">必須</span></label>
+        <select id="type" name="type" required>
+          <option value="" disabled selected>選択してください</option>
+          <option value="不具合・うまく動かない">不具合・うまく動かない</option>
+          <option value="プリントについて">プリントについて</option>
+          <option value="ご意見・ご要望">ご意見・ご要望</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="name">お名前・ニックネーム<span class="opt">任意</span></label>
+        <input type="text" id="name" name="name" placeholder="例：たんぽぽ">
+      </div>
+
+      <div class="field">
+        <label for="email">メールアドレス<span class="opt">任意</span></label>
+        <input type="email" id="email" name="email" placeholder="例：example@mail.com">
+        <span class="field-note">返信をご希望の場合のみご入力ください。</span>
+      </div>
+
+      <div class="field">
+        <label for="message">お問い合わせ内容<span class="req">必須</span></label>
+        <span class="field-note">不具合についてのお問い合わせの場合は、使用した端末（iPhone・Android・パソコンなど）や、どのような操作をしたときに起きたかも書いていただけると助かります。</span>
+        <textarea id="message" name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">送信する</button>
+
+    </div>
+
+  </form>
+
+  <div class="notice-card">
+    <ul>
+      <li>お問い合わせの際は、住所・電話番号・お子さまのお名前など、個人を特定できる情報の入力はお控えください。</li>
+      <li>入力いただいた情報は、お問い合わせへの対応以外の目的では使用しません。</li>
+      <li>個人情報の取り扱いについては、<a href="privacy.html">プライバシーポリシー</a>をご確認ください。</li>
+    </ul>
+  </div>
+
+  <div class="back-wrap">
+    <a class="back-btn" href="index.html">🏠 トップページへ戻る</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <strong>ひだまりプリント</strong><br>
+  お子さんとご家族の笑顔のために 🌸
+</footer>
+
+</body>
+</html>

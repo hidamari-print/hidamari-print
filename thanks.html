@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>お問い合わせ受付完了｜ひだまりプリント</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f5f0e6;
+  --green:#7aab5a;
+  --green-d:#5a8a40;
+  --green-l:#e8f2e0;
+  --green-m:#c8e0b4;
+  --text:#3a3020;
+  --text-m:#6a5a40;
+  --text-l:#9a8a70;
+  --border:rgba(80,60,20,0.12);
+  --white:#fff;
+  --font:'Zen Maru Gothic',sans-serif;
+}
+body{
+  font-family:var(--font);
+  background:var(--cream);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.8;
+}
+.site-header{
+  background:var(--white);
+  border-bottom:1.5px solid var(--green-m);
+  padding:0 20px;height:56px;
+  display:flex;align-items:center;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 1px 8px rgba(80,120,40,0.07);
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-ic{
+  width:36px;height:36px;background:var(--green);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+}
+.logo-name{font-size:1rem;font-weight:700;color:var(--green-d);}
+.container{max-width:720px;margin:0 auto;padding:60px 20px 60px;}
+.thanks-card{
+  background:var(--white);border-radius:16px;padding:40px 28px;
+  border:1.5px solid var(--border);text-align:center;
+}
+.thanks-icon{font-size:2.8rem;display:block;margin-bottom:16px;}
+.thanks-title{
+  font-size:1.4rem;font-weight:700;color:var(--green-d);
+  margin-bottom:20px;
+}
+.thanks-body{
+  font-size:.88rem;color:var(--text-m);line-height:1.85;margin-bottom:32px;
+}
+.back-btn{
+  display:inline-block;background:var(--green);color:#fff;text-decoration:none;
+  padding:13px 36px;border-radius:10px;font-family:var(--font);
+  font-size:.92rem;font-weight:700;transition:background .18s,transform .18s;
+}
+.back-btn:hover{background:var(--green-d);transform:translateY(-1px);}
+.site-footer{
+  background:var(--green-d);color:rgba(255,255,255,.85);text-align:center;
+  padding:24px 20px;font-size:.75rem;line-height:1.8;
+}
+.site-footer strong{color:#fff;}
+@media(max-width:480px){
+  .container{padding:40px 14px 48px;}
+  .thanks-card{padding:28px 16px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <div class="logo-ic">🌸</div>
+    <span class="logo-name">ひだまりプリント</span>
+  </a>
+</header>
+
+<main class="container">
+  <div class="thanks-card">
+    <span class="thanks-icon">🌸</span>
+    <h1 class="thanks-title">お問い合わせを受け付けました</h1>
+    <p class="thanks-body">
+      お問い合わせいただき、ありがとうございます。<br>
+      内容を確認のうえ、返信をご希望の方には必要に応じてご連絡いたします。
+    </p>
+    <a class="back-btn" href="index.html">🏠 トップページへ戻る</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <strong>ひだまりプリント</strong><br>
+  お子さんとご家族の笑顔のために 🌸
+</footer>
+
+</body>
+</html>
