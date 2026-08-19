@@ -198,14 +198,12 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
   .psheet{
     max-width:100%!important;
     width:100%!important;
-    height:auto!important;
+    height:100vh!important;
     border-radius:0!important;
     box-shadow:none!important;
     border:none!important;
     display:flex!important;
     flex-direction:column!important;
-    page-break-inside:avoid!important;
-    break-inside:avoid!important;
   }
   .shd{
     padding:6px 8px!important;
@@ -234,6 +232,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
     flex:1!important;
     display:flex!important;
     flex-direction:column!important;
+    overflow:hidden!important;
   }
   .calc-grid{
     border:3px solid #333!important;
@@ -242,10 +241,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
     grid-template-columns:1fr 1fr!important;
     grid-auto-rows:1fr!important;
     width:100%!important;
-    min-height:220mm!important;
-    max-height:245mm!important;
-    page-break-inside:avoid!important;
-    break-inside:avoid!important;
+    height:100%!important;
   }
   .calc-grid.single-col{grid-template-columns:1fr!important}
   /* やさしい（5問） */
@@ -377,7 +373,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
     </div>
   </div>
 </main>
-<footer class="hfooter"><strong style="color:#fff">ひだまりサポート</strong><br>お子さんとご家族の笑顔のために 🌸<br><small style="opacity:.6">※ 本サービスは教育支援を目的としています。医療的な診断・治療の代替にはなりません。</small></footer>
+<footer class="hfooter"><strong style="color:#fff">ひだまりサポート</strong><br>お子さんとご家族の笑顔のために 🌸<br><small style="opacity:.6">※ 本サービスは教育支援を目的としています。医療的な診断・治療の代替にはなりません。</small><br><small style="opacity:.7;margin-top:6px;display:inline-block"><a href="terms.html" style="color:rgba(255,255,255,.8);text-decoration:underline;">利用規約</a> ｜ <a href="privacy.html" style="color:rgba(255,255,255,.8);text-decoration:underline;">プライバシーポリシー</a> ｜ <a href="contact.html" style="color:rgba(255,255,255,.8);text-decoration:underline;">お問い合わせ</a></small></footer>
 </div>
 
 <!-- CHAT -->
