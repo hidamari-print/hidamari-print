@@ -933,13 +933,13 @@ function doPrint(){
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;font-family:'Noto Sans JP',sans-serif;background:#fff;
   -webkit-print-color-adjust:exact;print-color-adjust:exact}
-body{display:flex;flex-direction:column;}
+body{display:block;}
 .psheet{width:100%;display:flex;flex-direction:column;}
 .shd{padding:8px 0 8px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
 .shd-title{font-size:1rem;font-weight:700;color:#333}
 .snamae-wrap{display:flex;align-items:center;gap:6px;font-size:.9rem;font-weight:700;color:#333;white-space:nowrap}
 .snamae-line{display:inline-block;width:130px;border-bottom:3px solid #333;margin-left:4px}
-.sbody{flex:1;display:flex;flex-direction:column;}
+.sbody{display:block;}
 /* tableで全線を確実に3px統一 */
 table.calc-table{
   width:100%;
