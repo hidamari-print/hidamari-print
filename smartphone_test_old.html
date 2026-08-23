@@ -901,7 +901,115 @@ function genPrint(){
 
 /* ===== 印刷 ===== */
 function doPrint(){
-  window.print();
+  const sh=document.getElementById('psheet');
+  const title=document.getElementById('sheet-title').textContent;
+  const count=LV_CONFIG[curLv].count;
+  const cols=LV_CONFIG[curLv].cols;
+  // 問題数に応じてフォントサイズ・行の高さを調整
+  const baseFontSize = count<=5 ? '2.8rem' : count<=7 ? '2.2rem' : '1.6rem';
+  const numFontSize  = count<=5 ? '1.5rem' : count<=7 ? '1.3rem' : '1.0rem';
+  const rowHeight    = count<=5 ? '16vh'   : count<=7 ? '11vh'   : '8vh';
+  // tableで問題を組み立て
+  const rows=[];
+  if(cols===1){
+    const isEasyPrint = curLv===1;
+    const ansSpanPrint = isEasyPrint
+      ? `<span class="calc-ans-line"></span>`
+      : `<span class="calc-ans"></span>`;
+    lastProblems.forEach((p,i)=>{
+      rows.push(`<tr><td>
+        <span class="calc-num">(${i+1})</span>
+        <span class="calc-expr">
+          <span class="calc-n">${p.a}</span>
+          <span class="calc-op">${p.op}</span>
+          <span class="calc-n">${p.b}</span>
+          <span class="calc-eq">=</span>
+          ${ansSpanPrint}
+        </span>
+      </td></tr>`);
+    });
+  } else {
+    for(let i=0;i<lastProblems.length;i+=2){
+      const p1=lastProblems[i], p2=lastProblems[i+1]||null;
+      rows.push(`<tr>
+        <td><span class="calc-num">(${i+1})</span>
+          <span class="calc-expr">
+            <span class="calc-n">${p1.a}</span><span class="calc-op">${p1.op}</span>
+            <span class="calc-n">${p1.b}</span><span class="calc-eq">=</span>
+            <span class="calc-ans"></span>
+          </span>
+        </td>
+        <td>${p2?`<span class="calc-num">(${i+2})</span>
+          <span class="calc-expr">
+            <span class="calc-n">${p2.a}</span><span class="calc-op">${p2.op}</span>
+            <span class="calc-n">${p2.b}</span><span class="calc-eq">=</span>
+            <span class="calc-ans"></span>
+          </span>`:'&nbsp;'}
+        </td>
+      </tr>`);
+    }
+  }
+  const tableHTML=`<table class="calc-table">${rows.join('')}</table>`;
+  const sheetClass=sh.className;
+  const shdHTML=sh.querySelector('.shd').outerHTML;
+  const w=window.open('','_blank');
+  if(!w){
+    alert('ポップアップがブロックされました。ブラウザの設定でポップアップを許可してください。');
+    return;
+  }
+  w.document.write(`<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><title>${title}</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@page{size:A4 portrait;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;font-family:'Noto Sans JP',sans-serif;background:#fff;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{display:flex;flex-direction:column;}
+.psheet{width:100%;height:100%;display:flex;flex-direction:column;}
+.shd{padding:8px 0 8px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.shd-title{font-size:1rem;font-weight:700;color:#333}
+.snamae-wrap{display:flex;align-items:center;gap:6px;font-size:.9rem;font-weight:700;color:#333;white-space:nowrap}
+.snamae-line{display:inline-block;width:130px;border-bottom:3px solid #333;margin-left:4px}
+.sbody{flex:1;display:flex;flex-direction:column;}
+/* tableで全線を確実に3px統一 */
+table.calc-table{
+  width:100%;
+  height:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+table.calc-table td{
+  border:3px solid #333;
+  padding:0 20px;
+  font-size:${baseFontSize};
+  color:#333;
+  vertical-align:middle;
+  height:${rowHeight};
+}
+.calc-num{color:#333;font-size:${numFontSize};min-width:1.8em;display:inline-block;flex-shrink:0}
+.calc-expr{display:inline-flex;align-items:center;gap:16px;letter-spacing:.05em}
+.calc-n{min-width:1em;text-align:right;color:#333}
+.calc-op{color:#333;min-width:.8em;text-align:center}
+.calc-eq{color:#333}
+.calc-ans{display:inline-block;min-width:2.5em;}
+.calc-ans-line{display:inline-block;min-width:150px;border-bottom:3px dashed #999;margin-left:8px;vertical-align:text-bottom;position:relative;top:0.9em;}
+.bg-yellow td{background:#fffadc!important}
+.bg-mint td{background:#edfaf4!important}
+.bg-sky td{background:#e8f4fd!important}
+.bg-pink td{background:#fef0f0!important}
+.bg-gray td{background:#f4f4f4!important}
+</style></head><body>
+<div class="psheet ${sheetClass}">
+  ${shdHTML}
+  <div class="sbody">${tableHTML}</div>
+</div>
+</body></html>`);
+  w.document.close();
+  setTimeout(()=>{
+    w.print();
+    w.onafterprint=()=>{ window.focus(); };
+    w.onunload=()=>{ window.focus(); };
+  },800);
 }
 </script>
 </body>
