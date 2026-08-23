@@ -307,10 +307,17 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
 /* iOS Safari印刷専用（PC印刷には影響しない） */
 @media print{
   .ios-device .psheet{
-    height:277mm!important;
+    height:auto!important;
+    display:block!important;
   }
   .ios-device .sbody{
+    flex:none!important;
+    display:block!important;
     overflow:visible!important;
+  }
+  .ios-device .calc-grid{
+    height:auto!important;
+    flex:none!important;
   }
   /* 5問（lv-easy）行高さをmm固定 */
   .ios-device .lv-easy .calc-row{
