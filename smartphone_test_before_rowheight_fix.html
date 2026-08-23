@@ -312,6 +312,17 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
   .ios-device .sbody{
     overflow:visible!important;
   }
+  /* 5問（lv-easy）行高さをmm固定 */
+  .ios-device .lv-easy .calc-row{
+    height:45mm!important;
+    min-height:unset!important;
+  }
+  /* 7問（lv-normal）行高さをmm固定 */
+  .ios-device .lv-normal .calc-row{
+    height:30mm!important;
+    min-height:unset!important;
+  }
+  /* 10問（lv-hard）は変更しない */
 }
 @media print{
   .site-header,.psidebar,.pactions,.sugs,.cinput-row{display:none!important}
