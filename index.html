@@ -305,6 +305,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
   .calc-row{border-right:1px solid #ccc}
 }
 @media(max-width:400px){.traits{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.steps-grid{grid-template-columns:1fr!important}}
 @media print{
   .site-header,.psidebar,.pactions,.sugs,.cinput-row{display:none!important}
   .psheet{box-shadow:none;max-width:100%;border:1px solid #ccc}
@@ -383,6 +384,29 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
       <div class="trait"><span class="trait-ic">🔄</span><div class="trait-nm">ASD</div><div class="trait-dc">こだわり・コミュニケーション</div></div>
       <div class="trait"><span class="trait-ic">📖</span><div class="trait-nm">LD・学習障害</div><div class="trait-dc">読み書き計算の困りごと</div></div>
       <div class="trait"><span class="trait-ic">🌱</span><div class="trait-nm">知的発達</div><div class="trait-dc">ゆったり学びたい</div></div>
+    </div>
+  </div>
+  <div class="home-sec">
+    <div class="sec-lbl">
+      <div class="sec-ic">✨</div>
+      <div><h2>かんたん3ステップ</h2><p>はじめてでも、かんたんにプリントを作れます。</p></div>
+    </div>
+    <div class="steps-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div style="background:var(--white);border-radius:14px;padding:20px 16px;border:1.5px solid var(--border);text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:8px;">🎓</div>
+        <div style="font-size:.8rem;font-weight:700;color:var(--text);margin-bottom:6px;">① 学年・テーマ</div>
+        <div style="font-size:.78rem;color:var(--text-m);line-height:1.7;">お子さんの理解度に合わせて選びます。</div>
+      </div>
+      <div style="background:var(--white);border-radius:14px;padding:20px 16px;border:1.5px solid var(--border);text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:8px;">🎨</div>
+        <div style="font-size:.8rem;font-weight:700;color:var(--text);margin-bottom:6px;">② 問題数・背景色</div>
+        <div style="font-size:.78rem;color:var(--text-m);line-height:1.7;">その日の様子や取り組みやすさに合わせて調整します。</div>
+      </div>
+      <div style="background:var(--white);border-radius:14px;padding:20px 16px;border:1.5px solid var(--border);text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:8px;">🖨️</div>
+        <div style="font-size:.8rem;font-weight:700;color:var(--text);margin-bottom:6px;">③ 作成・印刷</div>
+        <div style="font-size:.78rem;color:var(--text-m);line-height:1.7;">プリントを作成して、そのまま印刷できます。</div>
+      </div>
     </div>
   </div>
 </main>
