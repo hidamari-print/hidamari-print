@@ -305,7 +305,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
   .calc-row{border-right:1px solid #ccc}
 }
 @media(max-width:400px){.traits{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.steps-grid{grid-template-columns:1fr!important}}
+@media(max-width:600px){.steps-grid{grid-template-columns:1fr!important}.traits{grid-template-columns:repeat(2,1fr)!important}}
 @media print{
   .site-header,.psidebar,.pactions,.sugs,.cinput-row{display:none!important}
   .psheet{box-shadow:none;max-width:100%;border:1px solid #ccc}
@@ -334,7 +334,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
   <section class="hero">
     <span class="hero-badge">✨ 無料</span>
     <h1>お子さん一人ひとりの<br><em>特性に合わせた</em>学習プリント</h1>
-    <p class="hero-desc">ADHD・ASD・LD・視覚過敏などに配慮しています。<br>背景色・難易度を調整できます。</p>
+    <p class="hero-desc">見やすさ・取り組みやすさに配慮した、シンプルな学習プリント。<br>発達に特性のあるお子さんや、学習に困りごとのあるお子さんにも使いやすいプリントを目指しています。</p>
     <div class="hero-btns">
       <button class="hbtn hbtn-p" onclick="go('print')">📝 プリントを作ってみる</button>
       <!-- 相談ボタン：Ver1.0では非表示（AI相談実装後に復活）
@@ -351,7 +351,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
     <div style="background:var(--white);border-radius:14px;padding:20px 24px;border:1.5px solid var(--border);font-size:.88rem;color:var(--text-m);line-height:1.85;">
       <p>ひだまりプリントは、お子さん一人ひとりの「見やすさ」「取り組みやすさ」を大切にした学習プリントサイトです。</p>
       <p style="margin-top:10px;">背景色や問題数などを選び、お子さんに合ったプリントに調整できます。</p>
-      <p style="margin-top:10px;">「問題が多いと疲れてしまう」「白い紙がまぶしく感じる」「書くことに負担がある」など、学習するときの困りごとに配慮しながら、無理なく取り組めるプリントを目指しています。</p>
+      <p style="margin-top:10px;">発達障害やADHD・ASD・LDなどの診断の有無にかかわらず、「書くことが負担」「集中が続きにくい」「白い紙がまぶしい」「問題が多いと疲れる」といった、学習するときの困りごとに配慮しています。</p>
     </div>
   </div>
   <div class="home-sec">
@@ -375,15 +375,13 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);min-heigh
     </div>
     <div class="sec-lbl">
       <div class="sec-ic">💡</div>
-      <div><h2>対応している特性・困りごと</h2></div>
+      <div><h2>こんな困りごとに配慮しています</h2></div>
     </div>
-    <div class="traits">
-      <div class="trait"><span class="trait-ic">👁️</span><div class="trait-nm">視覚過敏</div><div class="trait-dc">まぶしさ・情報過多</div></div>
-      <div class="trait"><span class="trait-ic">✋</span><div class="trait-nm">手先の困難</div><div class="trait-dc">書くことが難しい</div></div>
-      <div class="trait"><span class="trait-ic">⚡</span><div class="trait-nm">ADHD</div><div class="trait-dc">集中・衝動・多動</div></div>
-      <div class="trait"><span class="trait-ic">🔄</span><div class="trait-nm">ASD</div><div class="trait-dc">こだわり・コミュニケーション</div></div>
-      <div class="trait"><span class="trait-ic">📖</span><div class="trait-nm">LD・学習障害</div><div class="trait-dc">読み書き計算の困りごと</div></div>
-      <div class="trait"><span class="trait-ic">🌱</span><div class="trait-nm">知的発達</div><div class="trait-dc">ゆったり学びたい</div></div>
+    <div class="traits" style="grid-template-columns:repeat(4,1fr);">
+      <div class="trait"><span class="trait-ic">👁️</span><div class="trait-nm">まぶしさ・見えにくさ</div><div class="trait-dc">背景色を選べます</div></div>
+      <div class="trait"><span class="trait-ic">✋</span><div class="trait-nm">書くことの負担</div><div class="trait-dc">余白をとった見やすいレイアウト</div></div>
+      <div class="trait"><span class="trait-ic">⚡</span><div class="trait-nm">集中が続きにくい</div><div class="trait-dc">問題数を少なく調整できます</div></div>
+      <div class="trait"><span class="trait-ic">📖</span><div class="trait-nm">学習のつまずき</div><div class="trait-dc">理解度に合わせて内容を選べます</div></div>
     </div>
   </div>
   <div class="home-sec">
