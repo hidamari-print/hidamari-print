@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>発達に特性のあるお子さんにも使いやすい学習プリントとは？｜ひだまりプリント</title>
+<meta name="description" content="ひだまりプリントが工夫していること。背景色・問題数・シンプルなデザインなど、お子さんの困りごとに合わせた学習プリントの特徴を紹介します。">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f5f0e6;
+  --cream2:#ede8dc;
+  --green:#7aab5a;
+  --green-l:#e8f2e0;
+  --green-m:#c8e0b4;
+  --green-d:#5a8a40;
+  --text:#3a3020;
+  --text-m:#6a5a40;
+  --text-l:#9a8a70;
+  --border:rgba(80,60,20,0.12);
+  --white:#fff;
+  --radius:14px;
+  --font:'Zen Maru Gothic',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--cream);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.8;
+}
+
+/* ヘッダー */
+.site-header{
+  background:var(--white);
+  border-bottom:1.5px solid var(--green-m);
+  padding:0 20px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 1px 8px rgba(80,120,40,0.07);
+}
+.logo{
+  display:flex;align-items:center;gap:10px;text-decoration:none;
+}
+.logo-ic{
+  width:36px;height:36px;background:var(--green);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+}
+.logo-name{font-size:1rem;font-weight:700;color:var(--green-d);}
+
+/* メインコンテンツ */
+.container{
+  max-width:800px;
+  margin:0 auto;
+  padding:48px 24px 72px;
+}
+
+/* ページタイトル */
+.page-title{
+  font-size:clamp(1.15rem,3vw,1.45rem);
+  font-weight:700;
+  color:var(--text);
+  line-height:1.55;
+  margin-bottom:40px;
+  padding-bottom:16px;
+  border-bottom:2px solid var(--green-m);
+}
+
+/* セクション見出し */
+.sec-heading{
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--green-d);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.sec-heading::before{
+  content:'';
+  display:inline-block;
+  width:4px;
+  height:1.1em;
+  background:var(--green);
+  border-radius:2px;
+  flex-shrink:0;
+}
+
+/* 導入テキスト */
+.intro{
+  margin-bottom:52px;
+}
+.intro p{
+  font-size:.92rem;
+  color:var(--text-m);
+  line-height:1.9;
+  margin-bottom:12px;
+}
+.intro p:last-child{margin-bottom:0;}
+
+/* 工夫カード */
+.features{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-bottom:60px;
+}
+.feature-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  padding:22px 24px;
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+}
+.feature-icon{
+  font-size:1.7rem;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.feature-body{}
+.feature-title{
+  font-size:.95rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:6px;
+  line-height:1.5;
+}
+.feature-desc{
+  font-size:.83rem;
+  color:var(--text-m);
+  line-height:1.85;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  padding:48px 0 0;
+}
+.cta-title{
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:12px;
+}
+.cta-desc{
+  font-size:.86rem;
+  color:var(--text-m);
+  line-height:1.85;
+  margin-bottom:28px;
+}
+.cta-btn{
+  display:inline-block;
+  background:var(--green);
+  color:#fff;
+  text-decoration:none;
+  padding:14px 40px;
+  border-radius:10px;
+  font-family:var(--font);
+  font-size:.95rem;
+  font-weight:700;
+  transition:background .18s,transform .18s;
+}
+.cta-btn:hover{background:var(--green-d);transform:translateY(-1px);}
+
+/* フッター */
+.site-footer{
+  background:var(--green-d);
+  color:rgba(255,255,255,.85);
+  text-align:center;
+  padding:24px 20px;
+  font-size:.75rem;
+  line-height:1.8;
+}
+.site-footer strong{color:#fff;}
+.site-footer a{color:rgba(255,255,255,.8);text-decoration:underline;}
+
+/* スマホ */
+@media(max-width:600px){
+  .container{padding:36px 16px 60px;}
+  .feature-card{padding:18px 16px;gap:14px;}
+  .feature-icon{font-size:1.5rem;}
+  .feature-title{font-size:.9rem;}
+  .feature-desc{font-size:.8rem;}
+  .page-title{font-size:1.1rem;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <div class="logo-ic">🌸</div>
+    <span class="logo-name">ひだまりプリント</span>
+  </a>
+</header>
+
+<main class="container">
+
+  <h1 class="page-title">発達に特性のあるお子さんにも使いやすい学習プリントとは？</h1>
+
+  <!-- 導入 -->
+  <section class="intro">
+    <div class="sec-heading">一人ひとりに合った学び方を</div>
+    <p>子どもによって、見やすさや書きやすさ、集中しやすい問題量、理解しやすい内容はさまざまです。</p>
+    <p>ひだまりプリントでは、発達障害や知的障害などの診断の有無にかかわらず、その子の今の理解度や困りごとに合わせて、無理なく取り組める学習プリントを目指しています。</p>
+  </section>
+
+  <!-- 工夫していること -->
+  <section>
+    <div class="sec-heading">ひだまりプリントで工夫していること</div>
+    <div class="features">
+
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <div class="feature-body">
+          <div class="feature-title">背景色を6色から選べます</div>
+          <div class="feature-desc">白・クリーム・ミント・スカイ・ピンク・グレーの6色から選べます。白い紙がまぶしく感じる場合など、お子さんが見やすい色を選んで使えます。</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔢</div>
+        <div class="feature-body">
+          <div class="feature-title">その日に合わせて問題数を選べます</div>
+          <div class="feature-desc">5問・7問・10問から選べます。その日の体調や気分、集中のしやすさなどに合わせて、無理のない問題数を選べます。</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👀</div>
+        <div class="feature-body">
+          <div class="feature-title">シンプルで見やすいデザイン</div>
+          <div class="feature-desc">問題に集中しやすいよう、余計な情報や装飾をできるだけ減らした、シンプルなデザインにしています。</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">✏️</div>
+        <div class="feature-body">
+          <div class="feature-title">余白をとった、書き込みやすいレイアウト</div>
+          <div class="feature-desc">問題と問題の間に余白をとり、見やすさや書き込みやすさに配慮しています。5問のプリントでは、答えを書く位置が分かりやすいようにガイド線も入れています。</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <div class="feature-body">
+          <div class="feature-title">理解度に合わせて選べます</div>
+          <div class="feature-desc">表示している学年は目安です。実際の学年だけで決めず、お子さんの今の理解度に合った内容を選んで使えます。</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <div class="feature-body">
+          <div class="feature-title">くり返し使っても、いろいろな問題に取り組めます</div>
+          <div class="feature-desc">プリントを作成するたびに問題が変わるので、同じ設定でもいろいろな問題に取り組めます。繰り返し練習したいときにも使えます。</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-title">お子さんに合ったプリントを作ってみませんか？</div>
+    <p class="cta-desc">背景色や問題数などを選んで、お子さんが取り組みやすいプリントを作ることができます。</p>
+    <a class="cta-btn" href="index.html">📝 プリントを作ってみる</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <strong>ひだまりプリント</strong><br>
+  お子さんとご家族の笑顔のために 🌸<br>
+  <small style="opacity:.7;margin-top:6px;display:inline-block">
+    <a href="terms.html">利用規約</a> ｜
+    <a href="privacy.html">プライバシーポリシー</a> ｜
+    <a href="contact.html">お問い合わせ</a>
+  </small>
+</footer>
+
+</body>
+</html>
